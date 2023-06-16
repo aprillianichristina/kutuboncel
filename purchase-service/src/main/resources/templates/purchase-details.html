@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase Details</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Purchase Details</h1>
+    <div class="purchase-details">
+        <div class="purchase-id">Purchase ID: 1</div>
+        <div class="purchase-amount">Total Amount: $100</div>
+        <div class="product-list">
+            <div class="product">
+                <div class="product-name">Product 1</div>
+                <div class="product-quantity">Quantity: 2</div>
+            </div>
+            <div class="product">
+                <div class="product-name">Product 2</div>
+                <div class="product-quantity">Quantity: 3</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Load purchase details when the page loads
+        window.addEventListener('DOMContentLoaded', function() {
+            var purchaseId = 1; // Replace with actual purchase ID
+            loadPurchaseDetails(purchaseId);
+        });
+    </script>
+</body>
+</html>
+

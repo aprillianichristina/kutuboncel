@@ -1,0 +1,57 @@
+/* CSS styles for Purchase List */
+.purchase-list {
+  margin-top: 20px;
+}
+
+.purchase-list .purchase {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.purchase-list .purchase .purchase-info {
+  flex: 1;
+}
+
+.purchase-list .purchase .purchase-info .purchase-id {
+  font-weight: bold;
+}
+
+.purchase-list .purchase .purchase-info .purchase-amount {
+  color: #007bff;
+}
+
+/* CSS styles for Purchase Details */
+.purchase-details {
+  margin-top: 20px;
+}
+
+.purchase-details .purchase-id {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.purchase-details .purchase-amount {
+  color: #007bff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.purchase-details .product-list {
+  margin-top: 10px;
+}
+
+.purchase-details .product-list .product {
+  margin-bottom: 5px;
+}
+
+.purchase-details .product-list .product .product-name {
+  font-weight: bold;
+}
+
+.purchase-details .product-list .product .product-quantity {
+  color: #6c757d;
+}
+

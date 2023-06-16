@@ -1,0 +1,22 @@
+#!/bin/sh
+MAVEN_WRAPPER_VERSION=0.5.6
+BASE_URL=https://repo.maven.apache.org/maven2/io/takari/maven-wrapper
+WRAPPER_JAR=.mvn/wrapper/maven-wrapper.jar
+WRAPPER_JAR_URL=${BASE_URL}/${MAVEN_WRAPPER_VERSION}/maven-wrapper-${MAVEN_WRAPPER_VERSION}.jar
+WRAPPER_PROPERTIES=.mvn/wrapper/maven-wrapper.properties
+
+mkdir -p .mvn/wrapper
+
+if [ ! -e $WRAPPER_JAR ]; then
+  echo "Downloading Maven Wrapper..."
+  curl -o $WRAPPER_JAR $WRAPPER_JAR_URL
+fi
+
+if [ ! -e $WRAPPER_PROPERTIES ]; then
+  echo "Creating Maven Wrapper properties..."
+  echo "distributionUrl=${BASE_URL}/maven-wrapper-${MAVEN_WRAPPER_VERSION}.tar.gz" > $WRAPPER_PROPERTIES
+fi
+
+chmod +x $WRAPPER_JAR
+./mvnw "$@"
+

@@ -1,0 +1,96 @@
+/* Header style */
+.header {
+  background-color: #333;
+  padding: 10px;
+  color: #fff;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+/* Form style */
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.form-group button {
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* User list style */
+.user-list {
+  margin-top: 20px;
+}
+
+.user-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-list th,
+.user-list td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Address list style */
+.address-list {
+  margin-top: 20px;
+}
+
+.address-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.address-list li {
+  margin-bottom: 10px;
+}
+
+.address-list .address-title {
+  font-weight: bold;
+}
+
+/* Payment method list style */
+.payment-method-list {
+  margin-top: 20px;
+}
+
+.payment-method-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.payment-method-list li {
+  margin-bottom: 10px;
+}
+
+.payment-method-list .method-title {
+  font-weight: bold;
+}
+
+/* General styles */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+

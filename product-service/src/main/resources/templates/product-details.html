@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <h1>Product Details</h1>
+  <div class="product-details">
+    <img class="product-image" src="product_image.jpg" alt="Product Image">
+    <h2 class="product-name">Product Name</h2>
+    <p class="product-price">Price: $99.99</p>
+    <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula, massa ac aliquet pulvinar, urna mi feugiat purus, sit amet gravida diam nunc at urna.</p>
+  </div>
+  <script>
+    // Load the product details on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      var productId = '123'; // Replace with the actual product ID
+      loadProductDetails(productId);
+    });
+  </script>
+</body>
+</html>
+

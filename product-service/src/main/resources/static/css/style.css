@@ -1,0 +1,60 @@
+/* CSS styles for Product List */
+.product-list {
+  margin-top: 20px;
+}
+
+.product-list .product {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.product-list .product img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.product-list .product .product-info {
+  flex: 1;
+}
+
+.product-list .product .product-info .product-name {
+  font-weight: bold;
+}
+
+.product-list .product .product-info .product-price {
+  color: #007bff;
+}
+
+/* CSS styles for Product Details */
+.product-details {
+  margin-top: 20px;
+}
+
+.product-details .product-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.product-details .product-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-details .product-price {
+  color: #007bff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.product-details .product-description {
+  margin-bottom: 20px;
+}
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase List</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Purchase List</h1>
+    <div class="purchase-list">
+        <div class="purchase" data-purchase-id="1">
+            <div class="purchase-info">
+                <span class="purchase-id">Purchase ID: 1</span>
+                <span class="purchase-amount">Total Amount: $100</span>
+            </div>
+        </div>
+        <div class="purchase" data-purchase-id="2">
+            <div class="purchase-info">
+                <span class="purchase-id">Purchase ID: 2</span>
+                <span class="purchase-amount">Total Amount: $150</span>
+            </div>
+        </div>
+        <div class="purchase" data-purchase-id="3">
+            <div class="purchase-info">
+                <span class="purchase-id">Purchase ID: 3</span>
+                <span class="purchase-amount">Total Amount: $200</span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Load purchase list when the page loads
+        window.addEventListener('DOMContentLoaded', loadPurchaseList);
+    </script>
+</body>
+</html>
+
