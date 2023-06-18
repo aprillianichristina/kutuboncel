@@ -11,9 +11,11 @@ Kutu Boncel E-Commerce adalah aplikasi e-commerce yang menyediakan berbagai maca
 - JavaScript
 
 ## Database
-- Nama Databse	: kutu_boncel
+- Nama Database	: kutu_boncel
 - username	: christina
 - password	: #Chanchan88
+- localhost
+- port 3306
 
 ## Prasyarat
 - Java 8 atau versi yang lebih tinggi
@@ -21,7 +23,7 @@ Kutu Boncel E-Commerce adalah aplikasi e-commerce yang menyediakan berbagai maca
 - Maven
 
 ## Getting Started
-1. Clone repositori ini: git clone https://github.com/your-username/kutu-boncel.git
+1. Clone repositori ini: git clone https://github.com/aprillianichristina/kutuboncel.git
 2. Konfigurasi koneksi database di file `application.properties`.
 3. Jalankan perintah berikut untuk membangun dan menjalankan aplikasi: mvn spring-boot:run
 
@@ -58,5 +60,3 @@ Jika Anda ingin berkontribusi pada pengembangan aplikasi Kutu Boncel, silakan ik
 ## Lisensi
 
 Aplikasi Kutu Boncel dilisensikan di bawah lisensi pembuat langsung Christina Apriani dengan email kutuboncel@gmail.com
-
-
