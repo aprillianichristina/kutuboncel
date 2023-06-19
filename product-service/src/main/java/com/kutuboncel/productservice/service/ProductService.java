@@ -1,5 +1,6 @@
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,10 +8,12 @@ import java.util.Optional;
 @Service
 public class ProductService {
     private final ProductRepository productRepository;
+    private final RestTemplate restTemplate;
 
     @Autowired
-    public ProductService(ProductRepository productRepository) {
+    public ProductService(ProductRepository productRepository, RestTemplate restTemplate) {
         this.productRepository = productRepository;
+        this.restTemplate = restTemplate;
     }
 
     public List<Product> getAllProducts() {
@@ -47,5 +50,14 @@ public class ProductService {
     private boolean isProductCodeExists(String code) {
         return productRepository.findByCode(code).isPresent();
     }
-}
 
+    public Product getProductById(Long productId) {
+        String url = "http://localhost:8081/products/" + productId;
+        return restTemplate.getForObject(url, Product.class);
+    }
+
+    public void updateProductStock(Long productId, int quantity) {
+        String url = "http://localhost:8082/products/" + productId + "/stock";
+        restTemplate.put(url, quantity);
+    }
+}
