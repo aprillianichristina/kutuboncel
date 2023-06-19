@@ -66,12 +66,12 @@ public class DeliveryService {
     }
 
     public Delivery createDelivery(DeliveryRequest request) {
-        String url = "http://localhost:8083/deliveries";
+        String url = "http://localhost:8080/deliveries";
         return restTemplate.postForObject(url, request, Delivery.class);
     }
 
     public void updateDeliveryStatus(Long deliveryId, DeliveryStatus status) {
-        String url = "http://localhost:8083/deliveries/" + deliveryId + "/status";
+        String url = "http://localhost:8080/deliveries/" + deliveryId + "/status";
         restTemplate.put(url, status);
     }
 }
