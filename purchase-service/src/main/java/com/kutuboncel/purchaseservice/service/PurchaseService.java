@@ -121,12 +121,12 @@ public class PurchaseService {
     }
 
     public Purchase createPurchase(PurchaseRequest request) {
-        String url = "http://localhost:8080/purchases";
+        String url = "http://localhost:8082/purchases";
         return restTemplate.postForObject(url, request, Purchase.class);
     }
 
     public void updatePurchaseStatus(Long purchaseId, PurchaseStatus status) {
-        String url = "http://localhost:8080/purchases/" + purchaseId + "/status";
+        String url = "http://localhost:8082/purchases/" + purchaseId + "/status";
         restTemplate.put(url, status);
     }
 }
