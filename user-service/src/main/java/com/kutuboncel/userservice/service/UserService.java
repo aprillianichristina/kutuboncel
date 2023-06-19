@@ -1,14 +1,17 @@
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+    
+    @Autowired
+    private RestTemplate restTemplate;
 
     public User registerUser(UserRegistrationRequest request) {
- 
         validateUserRegistrationRequest(request);
 
         User user = new User();
@@ -20,9 +23,8 @@ public class UserService {
     }
 
     public User getUserById(Long userId) {
-
-        return userRepository.findById(userId)
-                .orElseThrow(() -> new UserNotFoundException("User not found with ID: " + userId));
+        String url = "http://localhost:8080/users/" + userId;
+        return restTemplate.getForObject(url, User.class);
     }
 
     public User updateUser(Long userId, UserUpdateRequest request) {
@@ -30,16 +32,13 @@ public class UserService {
 
         validateUserUpdateRequest(request);
 
-
         user.setName(request.getName());
         user.setEmail(request.getEmail());
-
 
         return userRepository.save(user);
     }
 
     private void validateUserRegistrationRequest(UserRegistrationRequest request) {
-
         if (StringUtils.isEmpty(request.getName())) {
             throw new IllegalArgumentException("Name must not be empty");
         }
@@ -54,7 +53,6 @@ public class UserService {
     }
 
     private void validateUserUpdateRequest(UserUpdateRequest request) {
-      
         if (StringUtils.isEmpty(request.getName())) {
             throw new IllegalArgumentException("Name must not be empty");
         }
@@ -65,10 +63,8 @@ public class UserService {
     }
 
     private boolean isValidEmail(String email) {
-
     }
 
     private String encryptPassword(String password) {
     }
 }
-
