@@ -1,5 +1,6 @@
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -7,11 +8,13 @@ import java.util.List;
 public class PurchaseService {
     private final PurchaseRepository purchaseRepository;
     private final ProductRepository productRepository;
+    private final RestTemplate restTemplate;
 
     @Autowired
-    public PurchaseService(PurchaseRepository purchaseRepository, ProductRepository productRepository) {
+    public PurchaseService(PurchaseRepository purchaseRepository, ProductRepository productRepository, RestTemplate restTemplate) {
         this.purchaseRepository = purchaseRepository;
         this.productRepository = productRepository;
+        this.restTemplate = restTemplate;
     }
 
     public Purchase createPurchase(Purchase purchase) {
@@ -116,5 +119,14 @@ public class PurchaseService {
 
         return bankAccountNumber.matches("\\d+");
     }
-}
 
+    public Purchase createPurchase(PurchaseRequest request) {
+        String url = "http://localhost:8080/purchases";
+        return restTemplate.postForObject(url, request, Purchase.class);
+    }
+
+    public void updatePurchaseStatus(Long purchaseId, PurchaseStatus status) {
+        String url = "http://localhost:8080/purchases/" + purchaseId + "/status";
+        restTemplate.put(url, status);
+    }
+}
